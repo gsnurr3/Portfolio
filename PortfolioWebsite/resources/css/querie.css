@@ -1,0 +1,129 @@
+@media only screen and (max-width: 1280px) {
+    .certifications {
+        height: 1100px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .main-nav {
+        float: none;
+        text-align: center;
+    }
+    
+    .main-nav li:last-child {
+        padding-right: 30px;
+    }
+    
+    .sticky-nav {
+        float: none;
+        text-align: center;
+    }
+    
+    .sticky-nav li:last-child {
+        padding-right: 15px;
+    }
+    
+    header {
+        background-attachment: local;
+    }
+    
+    .header-content {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .header-h1, .header-h2 {
+        padding-left: 0px;
+    }
+
+    #resume-button-animate {
+        margin-left: 0px;
+    }
+    
+    .header-content img {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1082px) {
+    .copyright {
+        padding-top: 30px; 
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .header-content {
+        top: 32vh;
+    }
+    .header-h1 {
+        font-size: 200%;
+    }
+    
+    .header-h2 {
+        font-size: 120%;
+    }
+    
+    .resume-h2 {
+        padding-top: 36px;
+    }
+    
+    .resume-button {
+        font-size: 120%;
+        height: 80px;
+        width: 200px;
+    }
+    
+    .main-nav {
+        display: none;
+    }
+    
+    .mobile-nav {
+        display: block;
+    }
+    
+    .mobile-nav-icon {
+        display: block;
+    }
+    
+    .sticky-div-display {
+        display: none;
+    }
+    
+    .social {
+        float: none;
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .footer-nav {
+        display: none;
+    }
+    
+    .copyright {
+        bottom: -65px;
+    }
+}
+
+@media only screen and (max-width: 859px) {
+    .certifications {
+        height: 2180px;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .header-h1 {
+        line-height: 35px;
+        }
+}
+
+@media only screen and (max-width: 440px) {
+    .cert {
+        width: 99%;
+    }
+}
+
+@media only screen and (max-height: 366px) {
+    header {
+        height: 366px;
+    }
+}

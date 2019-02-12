@@ -1,0 +1,432 @@
+/********** PARENT ELEMENTS **********/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {  
+    background-color: #fff;
+    color: #555;
+    font-family: 'Raleway', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/********** REUSABLE CODE **********/
+.wrapper {
+    position: relative;
+    max-width: 1140px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+section {
+    padding: 80px 0;
+    margin: 0px;
+}
+
+/********** HEADER **********/
+header {
+    top: 0;
+    left: 0;
+    height: 100vh;;
+    width: 100vw;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(/resources/img/headerImg.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/resources/img/headerImg.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.header-content {
+    text-align: left;
+    position: absolute;
+    top: 40vh;
+    left: 0px;;
+}
+
+.header-content img {
+    height: 100px;
+    border-radius: 50%;
+    float: left;
+    padding: 0px;
+    position: absolute;
+    -webkit-box-shadow: 0px 1px 10px #efefef;
+    box-shadow: 0px 1px 10px #efefef;
+}
+
+.header-h1, .header-h2 {
+    color: #fff;
+    text-align: center;
+    padding-left: 120px;
+}
+
+.resume-h2 {
+    color: #fff;
+    text-align: center;
+    padding-top: 45px;
+
+}
+
+.resume-button a {
+    text-decoration: none;
+}
+
+#resume-button-animate {
+    margin-left: 120px;
+}
+
+.resume-button
+{
+    font-size: 150%;
+    font-weight: 100;
+    line-height: 10px;
+    letter-spacing: 2px;
+    height: 100px;
+    width: 250px;
+    background-color: #3498db;
+    border-radius: 30px;
+    border: 2px solid #3498db;
+    -webkit-transition: background-color 0.5s, border 0.5s;
+    transition: background-color 0.5s, border 0.5s;
+    margin: 0 auto;
+}
+
+.resume-button:hover {
+    background-color: #1f74ac;
+    border: 2px solid #1f74ac;
+}
+/********** HEADINGS **********/
+h1 {
+    font-size: 250%;
+    font-weight: 300;
+    letter-spacing: 3px;
+    line-height: 30px;
+}
+
+h2 {
+    font-size: 150%;
+    font-weight: 100;
+    line-height: 10px;
+    letter-spacing: 2px;
+}
+
+h3 {
+    padding: 10px 0px;
+}
+
+/********** MAIN NAV **********/
+.main-nav {
+    float: right;
+}
+
+.main-nav li {
+    display: inline-block;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.main-nav li:last-child {
+    padding-right: 0px;
+}
+
+.main-nav li a {
+    text-decoration: none;
+    list-style: none;
+    color: #fff;
+    font-size: 90%;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #3498db; 
+}
+
+/********** STICKY NAV **********/
+.sticky-div-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    height: 50px;
+    width: 100%;
+    -webkit-box-shadow: 0px 1px 2px #3498db;
+    box-shadow: 0px 1px 2px #3498db;
+    z-index: 9997;
+}
+
+.hide-sticky {
+    display: none;
+}
+
+.sticky-div {
+    position: relative;
+    float: right;
+    z-index: 9997;
+}
+
+.sticky-div nav {
+    position: fixed;
+    right: 0%;
+    top: 0%;
+    width: 100%;
+}
+
+.sticky-nav {
+    background-color: transparent;
+    text-align: right;
+}
+
+.sticky-nav li {
+    padding: 15px 30px 15px 30px;
+    display: inline-block
+}
+
+.sticky-nav li:last-child {
+    padding-right: 0px;
+}
+
+.sticky-nav li a {
+    text-decoration: none;
+    list-style: none;
+    color: #3498db;
+    font-size: 90%;
+}
+
+.sticky-nav li a:link,
+.sticky-nav li a:visited {
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+
+.sticky-nav li a:hover,
+.sticky-nav li a:active {
+    border-bottom: 2px solid #3498db; 
+}
+
+/********** MOBILE NAV **********/
+.mobile-nav {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    background-color: #fff;
+    text-align: right;
+    -webkit-box-shadow: 0px 1px 2px #3498db;
+    box-shadow: 0px 1px 2px #3498db;
+    z-index: 9998;
+    text-align: center;
+    height: 40px;
+    display: none;
+}
+
+.mobile-nav li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: none;
+}
+
+.mobile-nav li a {
+    text-decoration: none;
+    list-style: none;
+    color: #3498db;
+    font-size: 90%;
+}
+
+.mobile-nav li a:link,
+.mobile-nav li a:visited {
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+
+.mobile-nav li a:hover,
+.mobile-nav li a:active {
+    border-bottom: 2px solid #3498db; 
+}
+
+.mobile-nav-icon {
+    position: fixed;
+    z-index: 9999;
+    top: 12px;
+    right: 20px;
+    font-size: 90%;
+    display: none;
+}
+
+.ion-navicon-round {
+    display: none;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+/********** ABOUT ME **********/
+.about-me {
+    background-color: #f7f7f7;
+}
+
+.about-me h2 {
+    padding-bottom: 50px;
+    color: #3498db;
+    font-weight: 300;
+}
+
+.about-me p {
+    line-height: 30px;
+    letter-spacing: 2px;
+    font-size: 80%;
+}
+
+/********** SKILLS **********/
+.skill-bar {
+    height: 15px;
+}
+
+.skills h2 {
+    padding-bottom: 50px;
+    color: #3498db;
+    font-weight: 300;
+}
+
+.skill-top-div {
+    padding-bottom: 30px;
+}
+
+.skill-div {
+    padding: 30px 0px;
+}
+
+.skill-div:last-child {
+    padding-bottom: 0px;
+}
+
+/********** CERTIFICATIONS **********/
+.certifications {
+    background-color: #f7f7f7;
+    height: 900px;
+    overflow: hidden;
+}
+
+.certifications h2 {
+    padding-bottom: 50px;
+    color: #3498db;
+    font-weight: 300;
+}
+
+.cert {
+    border: 2px solid;
+    border-color: #3498db;
+    height: 200px;
+    border-radius: 5px;
+    text-align: center;
+    width: 365px;
+    background-color: #fff;
+    margin: 0px 10px 10px 0px;
+    line-height: 110px;
+    -webkit-transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.cert:hover {
+    background-color: #1f74ac;
+}
+
+.cert p {
+    line-height: 20px;
+    letter-spacing: 1px;
+    padding: 0px 25px;
+    font-size: 80%;
+}
+
+.cert:hover p {
+    color: #fff;
+}
+
+a div i {
+    font-size: 250%;
+    color: rgb(247,151,30);
+}
+
+.cert:hover i {
+    color: white;
+}
+
+/********** FOOTER **********/
+footer {
+    height: 130px;
+    width: 100%;
+    background-color: #333;
+    margin: 0 auto;
+}
+
+.social {
+    float: right;
+}
+
+footer ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 20px 10px 0px 10px;
+}
+
+.footer-nav li a {
+    color: #888;
+    text-decoration: none;
+    font-size: 90%;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s;
+}
+
+.footer-nav li a:hover {
+    color: #fff;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s;
+}
+
+.social-links li a i {
+    color: #888;
+    font-size: 110%;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s;
+}
+
+.social-links li a i[class=ion-social-linkedin]:hover {
+    color: #0077B5;
+}
+
+.social-links li a i[class=ion-social-github]:hover {
+    color: #6e5494;
+}
+
+footer p {
+    color: #888;
+    text-align: center;
+    font-size: 90%
+}
+
+.copyright {
+    position: absolute;
+    bottom: -100px;
+    width: 100%;
+    margin: 0 auto;
+}
