@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head>
+
+        <title>WoW Classic</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+
+        <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.2.1/css/bootstrap.min.css}" />
+
+    </head>
+
+    <body>
+
+        <div id="content">
+            <header th:insert="layout/header"/>
+            <div class="container">
+                <div th:insert="${content}"/>
+            </div>
+        </div>
+
+        <footer class="footer" th:insert="layout/footer" />
+
+        <script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/1.14.3/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+
+    </body>
+
+</html>

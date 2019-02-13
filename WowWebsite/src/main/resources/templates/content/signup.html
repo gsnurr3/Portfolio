@@ -1,0 +1,27 @@
+<form action="#" th:action="@{/user/create}" th:object="${userModel}" method="POST">
+    <div class="form-group">
+        <p class="smallText text-danger" th:if="${constraintException}" th:text="${constraintException}"></p>
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter username" th:field="*{username}"/>
+        <p class="smallText text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"/>
+        <small class="form-text text-muted">The name other's see.</small>
+    </div>
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" th:field="*{email}"/>
+        <p class="smallText text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"/>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter password" th:field="*{password}"/>
+        <p class="smallText text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"/>
+    </div>
+    <div class="form-group">
+        <label for="matchingPassword">Verify Password</label>
+        <input type="password" class="form-control" id="matchingPassword" placeholder="Enter password again" th:field="*{matchingPassword}"/>
+        <p class="smallText text-danger" th:if="${#fields.hasErrors('matchingPassword')}" th:errors="*{matchingPassword}"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <div th:if="${param.result}">Invalid input found.</div>
+</form>

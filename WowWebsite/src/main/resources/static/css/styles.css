@@ -1,0 +1,34 @@
+/*ALWAYS ON BOTTOM FOOTER (DON'T DELETE)*/
+#content {
+    min-height: calc(100vh - 50px);
+}
+
+.footer {
+    height: 50px;
+}
+
+/*DEFAULT LAYOUT*/
+nav {
+    height: 80px;
+}
+
+.signUp {
+    margin-left: 10px;
+}
+
+.container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.footer {
+    text-align: center;
+    background-color: #cccccc;
+}
+
+/*FONT*/
+.smallText {
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+}
