@@ -32,3 +32,48 @@ nav {
     margin: 0px;
     font-size: 12px;
 }
+
+/*FORUMS*/
+.forum-container {
+    margin: 10px;
+    border-style: outset;
+    border-color: blue;
+    border-width: 1px;
+    border-radius: 5px;
+    box-shadow: 3px 3px grey;
+    padding: 10px !important;
+    background-color: azure;
+}
+
+.top-row {
+    margin-bottom: 10px;
+}
+
+.middle-row {
+    margin: 5px;
+}
+
+.bottom-row {
+    margin-top: 10px;
+}
+
+.forum-title {
+    font-weight: bold;
+}
+
+.forum-text {
+
+}
+
+.forum-votes {
+    text-align: center;
+    min-height: 50px;
+}
+
+.forum-comments {
+    color: #9b9191;
+}
+
+.forum-username {
+    color: #9b9191;
+}
