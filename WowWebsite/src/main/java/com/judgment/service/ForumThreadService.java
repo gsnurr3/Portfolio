@@ -3,25 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.judgment.dao;
+package com.judgment.service;
 
 import com.judgment.entity.ForumThread;
-import com.judgment.entity.User;
 import java.util.List;
 
 /**
  *
- * @author snurrg
+ * @author gsnurr3
  */
-public interface ForumThreadDAO {
-
-    ForumThread findById(Long id);
+public interface ForumThreadService {
 
     List<ForumThread> findByCategory(String category);
-
-    ForumThread findByUsername(User user);
-
-    void create(ForumThread forumThread);
-
-    void update(ForumThread forumThread);
 }

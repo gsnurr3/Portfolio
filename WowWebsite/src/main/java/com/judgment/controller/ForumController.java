@@ -5,6 +5,11 @@
  */
 package com.judgment.controller;
 
+import com.judgment.entity.ForumThread;
+import com.judgment.service.ForumThreadService;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,34 +23,59 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/forum")
 public class ForumController {
 
+    @Autowired
+    private ForumThreadService forumThreadService;
+
     private static final String NEWS_FORUM_URL = "/news";
     private static final String GENERAL_FORUM_URL = "/general";
     private static final String GUILD_FORUM_URL = "/guild";
     private static final String CONTENT = "content";
     private static final String CONTENT_FORUM = "content/forum";
+    private static final String FORUM_DATA = "forumThreads";
+    private static final String FRAGMENTS_FORUM_LIST = "fragments/forum-list :: #forumData";
     private static final String INDEX = "index";
+    private static final String NEWS = "NEWS";
+    private static final String GENERAL = "GENERAL";
+    private static final String GUILD = "GUILD";
 
-    @GetMapping(NEWS_FORUM_URL)
-    public String getForumNews(Model model) {
+    @GetMapping("")
+    public String getForumPage(Model model) {
 
         model.addAttribute(CONTENT, CONTENT_FORUM);
 
         return INDEX;
+    }
+
+    @GetMapping(NEWS_FORUM_URL)
+    public String getForumNews(Model model) {
+
+        List<ForumThread> forumThreads = new ArrayList<>();
+        forumThreads = forumThreadService.findByCategory(NEWS);
+
+        model.addAttribute(FORUM_DATA, forumThreads);
+
+        return FRAGMENTS_FORUM_LIST;
     }
 
     @GetMapping(GENERAL_FORUM_URL)
     public String getForumGeneral(Model model) {
 
-        model.addAttribute(CONTENT, CONTENT_FORUM);
+        List<ForumThread> forumThreads = new ArrayList<>();
+        forumThreads = forumThreadService.findByCategory(GENERAL);
 
-        return INDEX;
+        model.addAttribute(FORUM_DATA, forumThreads);
+
+        return FRAGMENTS_FORUM_LIST;
     }
 
     @GetMapping(GUILD_FORUM_URL)
     public String getForumGuild(Model model) {
 
-        model.addAttribute(CONTENT, CONTENT_FORUM);
+        List<ForumThread> forumThreads = new ArrayList<>();
+        forumThreads = forumThreadService.findByCategory(GUILD);
 
-        return INDEX;
+        model.addAttribute(FORUM_DATA, forumThreads);
+
+        return FRAGMENTS_FORUM_LIST;
     }
 }

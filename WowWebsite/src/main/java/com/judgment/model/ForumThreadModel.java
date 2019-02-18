@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class ForumThreadModel {
 
-    private UserModel userModel;
+    private String username;
 
     private String title;
 
@@ -36,12 +36,12 @@ public class ForumThreadModel {
         this.text = text;
     }
 
-    public UserModel getUserModel() {
-        return userModel;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserModel(UserModel userModel) {
-        this.userModel = userModel;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getTitle() {
@@ -102,6 +102,6 @@ public class ForumThreadModel {
 
     @Override
     public String toString() {
-        return "ForumThreadModel{" + "userModel=" + userModel + ", title=" + title + ", text=" + text + ", lastUpdatedDate=" + lastUpdatedDate + ", createdDate=" + createdDate + ", forumPostModels=" + forumPostModels + ", forumVoteModels=" + forumVoteModels + '}';
+        return "ForumThreadModel{" + "username=" + username + ", title=" + title + ", text=" + text + ", lastUpdatedDate=" + lastUpdatedDate + ", createdDate=" + createdDate + ", forumPostModels=" + forumPostModels + ", forumVoteModels=" + forumVoteModels + '}';
     }
 }

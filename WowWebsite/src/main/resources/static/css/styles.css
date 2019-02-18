@@ -1,5 +1,5 @@
 /*ALWAYS ON BOTTOM FOOTER (DON'T DELETE)*/
-#content {
+.content {
     min-height: calc(100vh - 50px);
 }
 

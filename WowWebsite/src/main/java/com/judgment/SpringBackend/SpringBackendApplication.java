@@ -63,7 +63,25 @@ public class SpringBackendApplication implements CommandLineRunner {
         forumThread = new ForumThread(user2.getUsername(), "This is the thread title", "This is the thread text", forumCategoryDAO.findByName("GENERAL"));
         forumThreadDAO.create(forumThread);
 
+        forumThread = new ForumThread(user1.getUsername(), "This is the thread title", "This is the thread text", forumCategoryDAO.findByName("GENERAL"));
+        forumThreadDAO.create(forumThread);
+
+        forumThread = new ForumThread(user3.getUsername(), "This is the thread title", "This is the thread text", forumCategoryDAO.findByName("GENERAL"));
+        forumThreadDAO.create(forumThread);
+
         forumThread = new ForumThread(user3.getUsername(), "This is the thread title", "This is the thread text", forumCategoryDAO.findByName("NEWS"));
+        forumThreadDAO.create(forumThread);
+
+        forumThread = new ForumThread(user3.getUsername(), "This is the thread title", "This is the thread text", forumCategoryDAO.findByName("NEWS"));
+        forumThreadDAO.create(forumThread);
+
+        forumThread = new ForumThread(user1.getUsername(), "This is the thread title", "This is the thread text", forumCategoryDAO.findByName("NEWS"));
+        forumThreadDAO.create(forumThread);
+
+        forumThread = new ForumThread(user3.getUsername(), "This is the thread title", "This is the thread text", forumCategoryDAO.findByName("NEWS"));
+        forumThreadDAO.create(forumThread);
+
+        forumThread = new ForumThread(user2.getUsername(), "This is the thread title", "This is the thread text", forumCategoryDAO.findByName("NEWS"));
         forumThreadDAO.create(forumThread);
 
         // CREATE FORUM POST

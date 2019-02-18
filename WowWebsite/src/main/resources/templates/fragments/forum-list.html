@@ -1,14 +1,25 @@
-<div class="container forum-container">
-    <div class="row top-row">
-        <div class="col forum-title">This is the title.</div>
-        <div class="col-md-auto">02/14/2019</div>
-    </div>
-    <div class="row middle-row">
-        <div class="col forum-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. </div>
-        <div class="col-md-auto forum-votes">Votes</div>
-    </div>
-    <div class="row bottom-row">
-        <div class="col forum-comments">1,293 Comments</div>
-        <div class="col-md-auto forum-username">Posted by: Username</div>
+<div id="forumData">
+    <div th:each="forumThread : ${forumThreads}">
+        <div class="container forum-container">
+            <div class="row top-row">
+                <div class="col forum-title"><span th:text="${forumThread.title}"></span></div>
+                <div class="col-md-auto"><span th:text="${forumThread.lastUpdatedDate}"></span></div>
+            </div>
+            <div class="row middle-row">
+                <div class="col forum-text"><span th:text="${forumThread.text}"></span></div>
+                <div class="col-md-auto forum-votes">Votes</div>
+            </div>
+            <div class="row bottom-row">
+                <div class="col forum-comments">1,239 Comments</div>
+                <div class="col-md-auto forum-username">Posted by: <span th:text="${forumThread.username}"></span></div>
+            </div>
+        </div>
     </div>
 </div>
+
+
+
+
+
+
+
