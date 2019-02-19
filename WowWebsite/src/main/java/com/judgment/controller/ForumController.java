@@ -5,10 +5,7 @@
  */
 package com.judgment.controller;
 
-import com.judgment.entity.ForumThread;
 import com.judgment.service.ForumThreadService;
-import java.util.ArrayList;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,10 +46,7 @@ public class ForumController {
     @GetMapping(NEWS_FORUM_URL)
     public String getForumNews(Model model) {
 
-        List<ForumThread> forumThreads = new ArrayList<>();
-        forumThreads = forumThreadService.findByCategory(NEWS);
-
-        model.addAttribute(FORUM_DATA, forumThreads);
+        model.addAttribute(FORUM_DATA, forumThreadService.findByCategory(NEWS));
 
         return FRAGMENTS_FORUM_LIST;
     }
@@ -60,10 +54,7 @@ public class ForumController {
     @GetMapping(GENERAL_FORUM_URL)
     public String getForumGeneral(Model model) {
 
-        List<ForumThread> forumThreads = new ArrayList<>();
-        forumThreads = forumThreadService.findByCategory(GENERAL);
-
-        model.addAttribute(FORUM_DATA, forumThreads);
+        model.addAttribute(FORUM_DATA, forumThreadService.findByCategory(GENERAL));
 
         return FRAGMENTS_FORUM_LIST;
     }
@@ -71,10 +62,7 @@ public class ForumController {
     @GetMapping(GUILD_FORUM_URL)
     public String getForumGuild(Model model) {
 
-        List<ForumThread> forumThreads = new ArrayList<>();
-        forumThreads = forumThreadService.findByCategory(GUILD);
-
-        model.addAttribute(FORUM_DATA, forumThreads);
+        model.addAttribute(FORUM_DATA, forumThreadService.findByCategory(GUILD));
 
         return FRAGMENTS_FORUM_LIST;
     }

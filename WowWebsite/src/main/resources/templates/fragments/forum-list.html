@@ -3,14 +3,14 @@
         <div class="container forum-container">
             <div class="row top-row">
                 <div class="col forum-title"><span th:text="${forumThread.title}"></span></div>
-                <div class="col-md-auto"><span th:text="${forumThread.lastUpdatedDate}"></span></div>
+                <div class="col-md-auto"><span th:text="${#temporals.format(forumThread.lastUpdatedDate, 'd-M-yyyy h:mm:ss a')}"></span></div>
             </div>
             <div class="row middle-row">
                 <div class="col forum-text"><span th:text="${forumThread.text}"></span></div>
                 <div class="col-md-auto forum-votes">Votes</div>
             </div>
             <div class="row bottom-row">
-                <div class="col forum-comments">1,239 Comments</div>
+                <div class="col forum-comments"><span th:text="${#lists.size(forumThread.forumPosts)}"></span> Comments</div>
                 <div class="col-md-auto forum-username">Posted by: <span th:text="${forumThread.username}"></span></div>
             </div>
         </div>

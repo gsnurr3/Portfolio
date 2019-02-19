@@ -23,6 +23,13 @@ public class ForumThreadServiceImpl implements ForumThreadService {
 
     @Override
     public List<ForumThread> findByCategory(String category) {
+
         return forumThreadDAO.findByCategory(category);
+    }
+
+    @Override
+    public void create(ForumThread forumThread) {
+
+        forumThreadDAO.create(forumThread);
     }
 }

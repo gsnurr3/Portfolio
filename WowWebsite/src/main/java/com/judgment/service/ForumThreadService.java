@@ -15,4 +15,6 @@ import java.util.List;
 public interface ForumThreadService {
 
     List<ForumThread> findByCategory(String category);
+
+    void create(ForumThread forumThread);
 }

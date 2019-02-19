@@ -5,8 +5,7 @@
  */
 package com.judgment.model;
 
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -14,26 +13,31 @@ import java.util.List;
  */
 public class ForumThreadModel {
 
+    private Long id;
+
     private String username;
 
     private String title;
 
     private String text;
 
-    private Date lastUpdatedDate;
+    private LocalDateTime lastUpdatedDate;
 
-    private Date createdDate;
+    private LocalDateTime createdDate;
 
-    private List<ForumPostModel> forumPostModels;
+    private int numberOfReplies;
 
-    private List<ForumVoteModel> forumVoteModels;
+    private int totalVotes;
 
     public ForumThreadModel() {
     }
 
-    public ForumThreadModel(String title, String text) {
-        this.title = title;
-        this.text = text;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -60,48 +64,40 @@ public class ForumThreadModel {
         this.text = text;
     }
 
-    public Date getLastUpdatedDate() {
+    public LocalDateTime getLastUpdatedDate() {
         return lastUpdatedDate;
     }
 
-    public void setLastUpdatedDate(Date lastUpdatedDate) {
+    public void setLastUpdatedDate(LocalDateTime lastUpdatedDate) {
         this.lastUpdatedDate = lastUpdatedDate;
     }
 
-    public Date getCreatedDate() {
+    public LocalDateTime getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Date createdDate) {
+    public void setCreatedDate(LocalDateTime createdDate) {
         this.createdDate = createdDate;
     }
 
-    public List<ForumPostModel> getForumPostModels() {
-        return forumPostModels;
+    public int getNumberOfReplies() {
+        return numberOfReplies;
     }
 
-    public void addForumPostModel(ForumPostModel forumPostModel) {
-        this.forumPostModels.add(forumPostModel);
+    public void setNumberOfReplies(int numberOfReplies) {
+        this.numberOfReplies = numberOfReplies;
     }
 
-    public void removeForumPostModel(ForumPostModel forumPostModel) {
-        this.forumPostModels.remove(forumPostModel);
+    public int getTotalVotes() {
+        return totalVotes;
     }
 
-    public List<ForumVoteModel> getForumVoteModels() {
-        return forumVoteModels;
-    }
-
-    public void addForumVoteModel(ForumVoteModel forumVoteModel) {
-        this.forumVoteModels.add(forumVoteModel);
-    }
-
-    public void removeForumVoteModel(ForumVoteModel forumVoteModel) {
-        this.forumVoteModels.remove(forumVoteModel);
+    public void setTotalVotes(int totalVotes) {
+        this.totalVotes = totalVotes;
     }
 
     @Override
     public String toString() {
-        return "ForumThreadModel{" + "username=" + username + ", title=" + title + ", text=" + text + ", lastUpdatedDate=" + lastUpdatedDate + ", createdDate=" + createdDate + ", forumPostModels=" + forumPostModels + ", forumVoteModels=" + forumVoteModels + '}';
+        return "ForumThreadModel{" + "id=" + id + ", username=" + username + ", title=" + title + ", text=" + text + ", lastUpdatedDate=" + lastUpdatedDate + ", createdDate=" + createdDate + ", numberOfReplies=" + numberOfReplies + ", totalVotes=" + totalVotes + '}';
     }
 }
