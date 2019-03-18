@@ -8,11 +8,7 @@
             <div class="row middle-row">
                 <div class="col forum-text"><span th:text="${forumThread.text}"></span></div>
                 <div th:with="result = 0">
-                    <div th:each="vote : ${forumThread.forumVotes}">
-                        <div th:if="${vote.upCount} == 1" th:attr="${result} = 1">upCount</div>
-                        <!--<div th:if="${vote.downCount} == 1"><div th:with="${result} = ${result} - 1"></div></div>-->
-                    </div>
-                    <div class="col-md-auto forum-votes"><span th:text="${result}"></span></div>
+                    <div class="col-md-auto forum-votes"><span th:text="${forumThread.voteCount}"></span></div>
                 </div>
             </div>
             <div class="row bottom-row">

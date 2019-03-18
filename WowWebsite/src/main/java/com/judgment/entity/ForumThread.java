@@ -21,6 +21,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -53,6 +54,9 @@ public class ForumThread implements Serializable {
     @CreationTimestamp
     @Column(name = "createdDate")
     private LocalDateTime createdDate;
+
+    @Transient
+    private int voteCount;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "forum_thread_categories",
@@ -130,6 +134,21 @@ public class ForumThread implements Serializable {
         this.createdDate = createdDate;
     }
 
+    public int getVoteCount() {
+
+        this.voteCount = 0;
+
+        for (ForumVote forumVote : this.getForumVotes()) {
+            if (forumVote.getUpCount() == 1) {
+                this.voteCount++;
+            } else if (forumVote.getDownCount() == 1) {
+                this.voteCount--;
+            }
+        }
+
+        return voteCount;
+    }
+
     public ForumCategory getForumCategory() {
         return forumCategory;
     }
@@ -156,6 +175,6 @@ public class ForumThread implements Serializable {
 
     @Override
     public String toString() {
-        return "ForumThread{" + "id=" + id + ", username=" + username + ", title=" + title + ", text=" + text + ", lastUpdatedDate=" + lastUpdatedDate + ", createdDate=" + createdDate + ", forumCategory=" + forumCategory + ", forumPosts=" + forumPosts + ", forumVotes=" + forumVotes + '}';
+        return "ForumThread{" + "id=" + id + ", username=" + username + ", title=" + title + ", text=" + text + ", lastUpdatedDate=" + lastUpdatedDate + ", createdDate=" + createdDate + ", voteCount=" + this.getVoteCount() + ", forumCategory=" + forumCategory + ", forumPosts=" + forumPosts + ", forumVotes=" + forumVotes + '}';
     }
 }

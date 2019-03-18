@@ -59,6 +59,10 @@ public class ForumThreadDAOImpl implements ForumThreadDAO {
 
         try {
             forumThreads = query.setParameter("category", category).getResultList();
+
+            for (ForumThread forumThread : forumThreads) {
+                logger.info(forumThread.toString());
+            }
         } catch (javax.persistence.NoResultException e) {
             logger.info("findByCategory: -> {}", e.getMessage());
         }
