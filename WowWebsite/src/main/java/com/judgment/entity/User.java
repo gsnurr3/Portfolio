@@ -79,6 +79,9 @@ public class User implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "usr_authority_id"))
     private Collection<Authority> authorities;
 
+    @Column(name = "registrationCode", nullable = true)
+    private String registrationCode;
+
     public User() {
     }
 
@@ -171,5 +174,18 @@ public class User implements UserDetails {
 
     public void setAuthorities(Collection<Authority> authorities) {
         this.authorities = authorities;
+    }
+
+    public String getRegistrationCode() {
+        return registrationCode;
+    }
+
+    public void setRegistrationCode(String registrationCode) {
+        this.registrationCode = registrationCode;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", username=" + username + ", email=" + email + ", password=" + password + ", lastUpdatedDate=" + lastUpdatedDate + ", createdDate=" + createdDate + ", accountNonExpired=" + accountNonExpired + ", accountNonLocked=" + accountNonLocked + ", credentialsNonExpired=" + credentialsNonExpired + ", enabled=" + enabled + ", authorities=" + authorities + ", registrationCode=" + registrationCode + '}';
     }
 }

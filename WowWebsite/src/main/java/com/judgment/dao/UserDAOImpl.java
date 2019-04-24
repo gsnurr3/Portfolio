@@ -29,6 +29,7 @@ public class UserDAOImpl implements UserDAO {
     private static final String FIND_BY_USERNAME_OR_BY_EMAIL_JPQL = "Select u from User u where u.username = :username or u.email = :email";
     private static final String FIND_BY_USERNAME_AND_PASSWORD_JPQL = "Select u from User u where u.username = :username and u.password = :password";
     private static final String UPDATE_PASSWORD_JPQL = "Update User u set u.password = :newPassword where u.username = :username";
+    private static final String UPDATE_ENABLED_AND_REGISTRATION_CODE_JPQL = "Update User u set u.enabled = :enabled, u.registrationCode = :registrationCode where u.username = :username";
 
     @Autowired
     private EntityManager em;
@@ -92,5 +93,12 @@ public class UserDAOImpl implements UserDAO {
         Query query = em.createQuery(UPDATE_PASSWORD_JPQL);
 
         return query.setParameter("newPassword", newPassword).setParameter("username", user.getUsername()).executeUpdate();
+    }
+
+    @Override
+    public int updateEnabledAndRegistrationCode(User user) {
+        Query query = em.createQuery(UPDATE_ENABLED_AND_REGISTRATION_CODE_JPQL);
+
+        return query.setParameter("enabled", user.isEnabled()).setParameter("registrationCode", user.getRegistrationCode()).setParameter("username", user.getUsername()).executeUpdate();
     }
 }

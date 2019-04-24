@@ -3,12 +3,15 @@
         <div class="container forum-container">
             <div class="row top-row">
                 <div class="col forum-title"><span th:text="${forumThread.title}"></span></div>
-                <div class="col-md-auto"><span th:text="${#temporals.format(forumThread.lastUpdatedDate, 'd-M-yyyy h:mm:ss a')}"></span></div>
+                <div class="col-md-auto"><span th:text="${#temporals.format(forumThread.lastUpdatedDate, 'd-M-yyyy h:mm:ss')}"></span></div>
             </div>
             <div class="row middle-row">
                 <div class="col forum-text"><span th:text="${forumThread.text}"></span></div>
                 <div th:with="result = 0">
-                    <div class="col-md-auto forum-votes"><span th:text="${forumThread.voteCount}"></span></div>
+                    <div class="col-md-auto forum-votes">
+                        <span><i class="fas fa-arrow-up"></i></span>
+                        <span th:text="${forumThread.voteCount}"></span>
+                        <span><i class="fas fa-arrow-down"></i></span></div>
                 </div>
             </div>
             <div class="row bottom-row">

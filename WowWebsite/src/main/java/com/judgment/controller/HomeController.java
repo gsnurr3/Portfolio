@@ -31,7 +31,14 @@ public class HomeController {
         }
 
         if (request.getSession().getAttribute("loginError") != null) {
-            model.addAttribute("loginError", "true");
+            if (request.getSession().getAttribute("loginError").equals("This account's email has not been verified.")) {
+                model.addAttribute("loginError", "This account's email has not been verified.");
+            }
+
+            if (request.getSession().getAttribute("loginError").equals("Invalid username or password.")) {
+                model.addAttribute("loginError", "Invalid username or password.");
+            }
+
             request.getSession().removeAttribute("loginError");
         }
 

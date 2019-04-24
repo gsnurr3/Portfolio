@@ -21,6 +21,8 @@ public interface UserService extends UserDetailsService {
 
     User findByUsernameAndPassword(String username, String password);
 
+    User registerUserByUsernameAndRegistrationCode(String username, String registrationCode);
+
     void createGuest(UserModel userModel);
 
     void createClient(UserModel userModel);

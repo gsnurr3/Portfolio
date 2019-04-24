@@ -28,7 +28,7 @@
                     <button class="btn btn-outline-primary signUp" type="submit">Sign Up!</button>
                 </form>
             </div>
-            <div th:if="${loginError}" class="smallText text-danger">Invalid user name or password.</div>
+            <div th:if="${loginError}" class="smallText text-danger"><span th:text="${loginError}"></span></div>
             <div th:if="${logoutSuccessful}" class="smallText text-success">You have been logged out.</div>
         </div>
         <div sec:authorize="isAuthenticated()">

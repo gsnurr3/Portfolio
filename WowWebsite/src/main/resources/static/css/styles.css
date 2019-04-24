@@ -68,6 +68,7 @@ nav {
 .forum-votes {
     text-align: center;
     min-height: 50px;
+    display: block !important;
 }
 
 .forum-comments {

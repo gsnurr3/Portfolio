@@ -106,43 +106,43 @@ public class SpringBackendApplication implements CommandLineRunner {
         forumThreadDAO.update(forumThread);
 
         //CREATE THREAD VOTE
-        ForumVote forumVote = new ForumVote(user1.getUsername(), 1, 0);
+        ForumVote forumVote = new ForumVote(user1.getUsername(), 1);
         forumThread = forumThreadDAO.findById(3L);
         forumThread.getForumVotes().add(forumVote);
         forumThreadDAO.update(forumThread);
 
-        forumVote = new ForumVote(user1.getUsername(), 0, 1);
+        forumVote = new ForumVote(user1.getUsername(), 1);
         forumThread = forumThreadDAO.findById(3L);
         forumThread.getForumVotes().add(forumVote);
         forumThreadDAO.update(forumThread);
 
-        forumVote = new ForumVote(user2.getUsername(), 0, 1);
+        forumVote = new ForumVote(user2.getUsername(), -1);
         forumThread = forumThreadDAO.findById(2L);
         forumThread.getForumVotes().add(forumVote);
         forumThreadDAO.update(forumThread);
 
-        forumVote = new ForumVote(user3.getUsername(), 1, 0);
+        forumVote = new ForumVote(user3.getUsername(), 1);
         forumThread = forumThreadDAO.findById(1L);
         forumThread.getForumVotes().add(forumVote);
         forumThreadDAO.update(forumThread);
 
         // CREATE POST VOTE
-        forumVote = new ForumVote(user3.getUsername(), 1, 0);
+        forumVote = new ForumVote(user3.getUsername(), -1);
         forumPost = forumPostDAO.findById(1L);
         forumPost.getForumVotes().add(forumVote);
         forumPostDAO.update(forumPost);
 
-        forumVote = new ForumVote(user2.getUsername(), 1, 0);
+        forumVote = new ForumVote(user2.getUsername(), -1);
         forumPost = forumPostDAO.findById(2L);
         forumPost.getForumVotes().add(forumVote);
         forumPostDAO.update(forumPost);
 
-        forumVote = new ForumVote(user1.getUsername(), 1, 0);
+        forumVote = new ForumVote(user1.getUsername(), 0);
         forumPost = forumPostDAO.findById(2L);
         forumPost.getForumVotes().add(forumVote);
         forumPostDAO.update(forumPost);
 
-        forumVote = new ForumVote(user2.getUsername(), 1, 0);
+        forumVote = new ForumVote(user2.getUsername(), 1);
         forumPost = forumPostDAO.findById(3L);
         forumPost.getForumVotes().add(forumVote);
         forumPostDAO.update(forumPost);

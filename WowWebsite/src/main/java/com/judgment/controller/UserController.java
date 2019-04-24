@@ -5,6 +5,7 @@
  */
 package com.judgment.controller;
 
+import com.judgment.entity.User;
 import com.judgment.model.UserModel;
 import com.judgment.service.UserService;
 import javax.validation.Valid;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -27,9 +29,11 @@ public class UserController {
 
     private static final String SIGN_UP_URL = "/signup";
     private static final String CREATE_URL = "/create";
+    private static final String REGISTRATION_URL = "/registration";
     private static final String CONTENT = "content";
     private static final String CONTENT_SIGN_UP = "content/signup";
     private static final String CONTENT_SUCCESS = "content/success";
+    private static final String CONTENT_REGISTRATION = "content/registration";
     private static final String REDIRECT_ERROR = "redirect:/error";
     private static final String INDEX = "index";
 
@@ -53,7 +57,7 @@ public class UserController {
         if (result.hasErrors()) {
             model.addAttribute(CONTENT, CONTENT_SIGN_UP);
 
-            return "index";
+            return INDEX;
         }
 
         try {
@@ -73,5 +77,20 @@ public class UserController {
         model.addAttribute(CONTENT, CONTENT_SUCCESS);
 
         return INDEX;
+    }
+
+    @GetMapping(REGISTRATION_URL)
+    public String userRegistration(@RequestParam("username") String username, @RequestParam("registrationCode") String registrationCode, Model model) {
+
+        User user = userService.registerUserByUsernameAndRegistrationCode(username, registrationCode);
+
+        if (!user.getUsername().equals(username)) {
+            return REDIRECT_ERROR;
+        } else {
+
+            model.addAttribute(CONTENT, CONTENT_REGISTRATION);
+
+            return INDEX;
+        }
     }
 }

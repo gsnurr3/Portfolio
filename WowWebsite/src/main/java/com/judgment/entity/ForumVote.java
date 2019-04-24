@@ -29,19 +29,15 @@ public class ForumVote implements Serializable {
     @Column(name = "username", nullable = false)
     private String username;
 
-    @Column(name = "upCount", nullable = false)
-    private int upCount;
-
-    @Column(name = "downCount", nullable = false)
-    private int downCount;
+    @Column(name = "isLiked", nullable = false)
+    private int isLiked = 0;
 
     public ForumVote() {
     }
 
-    public ForumVote(String username, int upCount, int downCount) {
+    public ForumVote(String username, int isLiked) {
         this.username = username;
-        this.upCount = upCount;
-        this.downCount = downCount;
+        this.isLiked = isLiked;
     }
 
     public Long getId() {
@@ -56,24 +52,16 @@ public class ForumVote implements Serializable {
         this.username = username;
     }
 
-    public int getUpCount() {
-        return upCount;
+    public int getIsLiked() {
+        return isLiked;
     }
 
-    public void setUpCount(int upCount) {
-        this.upCount = upCount;
-    }
-
-    public int getDownCount() {
-        return downCount;
-    }
-
-    public void setDownCount(int downCount) {
-        this.downCount = downCount;
+    public void setIsLiked(int isLiked) {
+        this.isLiked = isLiked;
     }
 
     @Override
     public String toString() {
-        return "ForumVote{" + "id=" + id + ", username=" + username + ", upCount=" + upCount + ", downCount=" + downCount + '}';
+        return "ForumVote{" + "id=" + id + ", username=" + username + ", isLiked=" + isLiked + '}';
     }
 }

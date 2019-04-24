@@ -136,14 +136,10 @@ public class ForumThread implements Serializable {
 
     public int getVoteCount() {
 
-        this.voteCount = 0;
+        voteCount = 0;
 
         for (ForumVote forumVote : this.getForumVotes()) {
-            if (forumVote.getUpCount() == 1) {
-                this.voteCount++;
-            } else if (forumVote.getDownCount() == 1) {
-                this.voteCount--;
-            }
+            voteCount = voteCount + forumVote.getIsLiked();
         }
 
         return voteCount;
