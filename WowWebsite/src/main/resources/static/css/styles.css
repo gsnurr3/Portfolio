@@ -1,80 +1,213 @@
+/*DEFAULT*/
+html {
+    overflow-y: scroll;
+}
+
 /*ALWAYS ON BOTTOM FOOTER (DON'T DELETE)*/
-.content {
+.default {
     min-height: calc(100vh - 50px);
+}
+
+.copyright {
+    color: #ffffc1;
 }
 
 .footer {
     height: 50px;
 }
 
-/*DEFAULT LAYOUT*/
-nav {
-    height: 80px;
+/*CONTENT*/
+.content .container {
+    padding-bottom: 30px;
 }
 
-.signUp {
+/*BACKGROUND*/
+.background-picture {
+    z-index: -1;
+    min-height: 600px;
+    background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .9)), url("/img/Wow_Image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.background-color {
+    min-height: calc(100vh - 50px);
+    background-color: #000000;
+}
+
+/*JUMBOTRON*/
+.jumbotron {
+    min-width: 600px !important;
+    padding-top: 150px !important;
+    color: white;
+    background-color: rgba(0, 0, 0, .0) !important;
+}
+
+.jumbotron .display-4 {
+    color: #ffffc1;
+}
+
+.jumbotron .lead {
+    color: #ffffc1;
+}
+
+.jumbotron p {
+    color: #ffffc1;
+}
+
+/*NAVBAR*/
+nav {
+    height: 80px;
+    margin-bottom: -80px;
+}
+
+.navbar-brand-color {
+    color: #f06c0a !important;
+    transition-duration: .7s;
+}
+
+.navbar-brand:hover {
+    color: #ffb957 !important;
+    transition-duration: .7s;
+}
+
+.nav-link-color {
+    color: #f06c0a !important;
+    transition-duration: .7s;
+}
+
+.nav-link-color:hover {
+    color: #ffb957 !important;
+    transition-duration: .7s;
+}
+
+/*FOOTER*/
+footer {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.footer {
+    color: #ffffff;
+    text-align: center;
+    background-color: #000000;
+}
+
+/*SIGN UP, SIGN OUT*/
+.signUp, .signOut {
     margin-left: 10px;
 }
 
-.container {
-    padding-top: 50px;
-    padding-bottom: 50px;
+.signup-label {
+    color: #ffffc1;
 }
 
-.footer {
-    text-align: center;
-    background-color: #cccccc;
+.signup-success-text p{
+    color: #ffffff;
 }
 
-/*FONT*/
-.smallText {
+.signup-success-text label{
+    color: #ffffc1;
+}
+
+/*REGISTRATION*/
+.registration-text p {
+    color: #ffffc1;
+}
+
+/*MESSAGES*/
+.header-text {
     padding: 0px;
     margin: 0px;
-    font-size: 12px;
+    font-size: 15px;
+    text-align: right;
+}
+
+.signup-text {
+    padding: 0px;
+    margin: 0px;
+    font-size: 15px;
 }
 
 /*FORUMS*/
 .forum-container {
-    margin: 10px;
-    border-style: outset;
-    border-color: blue;
-    border-width: 1px;
-    border-radius: 5px;
-    box-shadow: 3px 3px grey;
-    padding: 10px !important;
-    background-color: azure;
-}
-
-.top-row {
-    margin-bottom: 10px;
-}
-
-.middle-row {
-    margin: 5px;
-}
-
-.bottom-row {
-    margin-top: 10px;
+    box-shadow: 2px 2px 2px 2px;
+    margin: 15px auto !important;
+    width: 750px;
+    max-height:400px;
+    background-color: #ffffff;
+    transform: translateZ(-100px);
 }
 
 .forum-title {
+    padding-left: 10px;
+    padding-top: 5px;
+    margin-left: 15px;
+    min-width: 580px;
+    max-width: 580px;
+    min-height: 50px;
+    max-height: 100px;
     font-weight: bold;
+    font-size: 20px;
+    background-color: #fcfcfc;
+}
+
+.forum-date {
+    padding-top: 5px;
+    text-align: center;
+    min-width: 170px;
+    background-color: #f0f0f0;
 }
 
 .forum-text {
-
+    padding-left: 10px;
+    padding-top: 5px;
+    margin-left: 15px;
+    min-width: 580px;
+    max-width: 580px;
+    min-height: 75px;
+    max-height: 125px;
+    background-color: #fcfcfc;
 }
 
 .forum-votes {
-    text-align: center;
-    min-height: 50px;
-    display: block !important;
+    position: relative;
+    min-width: 170px;
+    text-align: center !important;
+    background-color: #f0f0f0;
+}
+
+.align-vertically {
+    padding-left: 75px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .forum-comments {
-    color: #9b9191;
+    padding-left: 10px;
+    margin-left: 15px;
+    padding-top: 10px;
+    min-width: 580px;
+    min-height: 50px;
+    font-weight: bold;
+    background-color: #fcfcfc;
 }
 
-.forum-username {
-    color: #9b9191;
+.forum-comments span {
+    border-bottom: 2px solid #000000;
+}
+
+.forum-posted-by {
+    padding-top: 10px;
+    text-align: center;
+    min-width: 170px;
+    max-width: 170px;
+    background-color: #f0f0f0;
+}
+
+/*ERROR*/
+.error-text {
+    color: #ffffc1;
+    text-align: center;
 }

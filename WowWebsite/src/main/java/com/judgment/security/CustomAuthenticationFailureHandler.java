@@ -35,6 +35,6 @@ public class CustomAuthenticationFailureHandler implements AuthenticationFailure
             request.getSession().setAttribute("loginError", "Invalid username or password.");
         }
 
-        response.sendRedirect("/home");
+        response.sendRedirect("/forum");
     }
 }

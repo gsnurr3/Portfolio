@@ -1,7 +1,9 @@
-<p>You have successfully created an account! An email has been sent to the below email address for verification. Once verified, you can login.</p>
-username: <p th:text="${userModel.username}"/>
-email: <p th:text="${userModel.email}"/>
-password: <p th:text="${userModel.password}"/>
-
-
-
+<div class="container signup-success-text">
+    <p>You have successfully created an account! An email has been sent to the below email address for verification. Once verified, you can login.</p>
+    <label>username: </label>
+    <p th:text="${userModel.username}"/>
+    <label>email: </label>
+    <p th:text="${userModel.email}"/>
+    <label>password: </label>
+    <p th:text="${userModel.password}"/>
+</div>

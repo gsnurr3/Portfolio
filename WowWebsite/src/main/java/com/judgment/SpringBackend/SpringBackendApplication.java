@@ -57,28 +57,28 @@ public class SpringBackendApplication implements CommandLineRunner {
         User user3 = userService.findByUsername("admin");
 
         // CREATE FORUM THREAD
-        ForumThread forumThread = new ForumThread(user1.getUsername(), "This is the thread title", "This is the thread text", forumCategoryDAO.findByName("GUILD"));
+        ForumThread forumThread = new ForumThread(user1.getUsername(), "This is the thre dsfdsf dsfds fdsf dsfds dsf dsf dsfds sdfsd fdsf dsf sdfsd fsdf sdfds fsd fsdf dsf sdf dsf sdf dsf sd fsd fsdf sdad title", "This is the thread text", forumCategoryDAO.findByName("GUILD"));
         forumThreadDAO.create(forumThread);
 
-        forumThread = new ForumThread(user2.getUsername(), "This is the thread title", "This is the thread text", forumCategoryDAO.findByName("GENERAL"));
+        forumThread = new ForumThread(user2.getUsername(), "This is the thread title", "This This is the thre dsfdsf dsfds fdsf dsfds dsf dsf dsfds sdfsd fdsf dsf sdfsd fsdf sdfds fsd fsdf dsf sdf dsf sdf dsf sd fsd fsdf sd fds fsf sdad titleis the thread text", forumCategoryDAO.findByName("GENERAL"));
         forumThreadDAO.create(forumThread);
 
         forumThread = new ForumThread(user1.getUsername(), "This is the thread title", "This is the thread text", forumCategoryDAO.findByName("GENERAL"));
         forumThreadDAO.create(forumThread);
 
-        forumThread = new ForumThread(user3.getUsername(), "This is the thread title", "This is the thread text", forumCategoryDAO.findByName("GENERAL"));
+        forumThread = new ForumThread(user3.getUsername(), "This is theThis is the thre dsfdsf dsfds fdsf dsfds dsf dsf dsfds sdfsd fdsf dsf sdfsd fsdf sdfds fsd fsdf dsf sdf dsf sdf dsf sd fsd fsdf sd fds fsf sdad title thread title", "This is the thread text", forumCategoryDAO.findByName("GENERAL"));
         forumThreadDAO.create(forumThread);
 
         forumThread = new ForumThread(user3.getUsername(), "This is the thread title", "This is the thread text", forumCategoryDAO.findByName("NEWS"));
         forumThreadDAO.create(forumThread);
 
-        forumThread = new ForumThread(user3.getUsername(), "This is the thread title", "This is the thread text", forumCategoryDAO.findByName("NEWS"));
+        forumThread = new ForumThread(user3.getUsername(), "This is the thrThis is the thre dsfdsf dsfds fdsf dsfds dsf dsf dsfds sdfsd fdsf dsf sdfsd fsdf sdfds fsd fsdf dsf sdf dsf sdf dsf sd fsd fsdf sd fds fsf sdad titleead title", "This is thThis is the thre dsfdsf dsfds fdsf dsfds dsf dsf dsfds sdfsd fdsf dsf sdfsd fsdf sdfds fsd fsdf dsf sdf dsf sdf dsf sd fsd fsdf sd fds fsf sdad titlee thread text", forumCategoryDAO.findByName("NEWS"));
         forumThreadDAO.create(forumThread);
 
         forumThread = new ForumThread(user1.getUsername(), "This is the thread title", "This is the thread text", forumCategoryDAO.findByName("NEWS"));
         forumThreadDAO.create(forumThread);
 
-        forumThread = new ForumThread(user3.getUsername(), "This is the thread title", "This is the thread text", forumCategoryDAO.findByName("NEWS"));
+        forumThread = new ForumThread(user3.getUsername(), "This is the This is the thre dsfdsf dsfds fdsf dsfds dsf dsf dsfds sdfsd fdsf dsf sdfsd fsdf sdfds fsd fsdf dsf sdf dsf sdf dsf sd fsd fsdf sd fds fsf sdad titlethread title", "This is the thread text", forumCategoryDAO.findByName("NEWS"));
         forumThreadDAO.create(forumThread);
 
         forumThread = new ForumThread(user2.getUsername(), "This is the thread title", "This is the thread text", forumCategoryDAO.findByName("NEWS"));
@@ -90,7 +90,7 @@ public class SpringBackendApplication implements CommandLineRunner {
         forumThread.getForumPosts().add(forumPost);
         forumThreadDAO.update(forumThread);
 
-        forumPost = new ForumPost(user3.getUsername(), "This is the post text.");
+        forumPost = new ForumPost(user3.getUsername(), "This is the This is the thre dsfdsf dsfds fdsf dsfds dsf dsf dsfds sdfsd fdsf dsf sdfsd fsdf sdfds fsd fsdf dsf sdf dsf sdf dsf sd fsd fsdf sd fds fsf sdad titlepost text.");
         forumThread = forumThreadDAO.findById(1L);
         forumThread.getForumPosts().add(forumPost);
         forumThreadDAO.update(forumThread);

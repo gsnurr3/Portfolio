@@ -19,7 +19,7 @@ public class IndexController implements ErrorController {
 
     private static final String INDEX1_URL = "";
     private static final String INDEX2_URL = "/";
-    private static final String REDIRECT_HOME = "redirect:/home";
+    private static final String REDIRECT_FORUM = "redirect:/forum";
     private static final String CONTENT = "content";
     private static final String ERROR_ERROR = "error/error";
     private static final String INDEX = "index";
@@ -28,7 +28,7 @@ public class IndexController implements ErrorController {
     @GetMapping(value = {INDEX1_URL, INDEX2_URL})
     public String goToIndex() {
 
-        return REDIRECT_HOME;
+        return REDIRECT_FORUM;
     }
 
     @GetMapping(value = PATH)

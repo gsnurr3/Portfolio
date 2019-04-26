@@ -6,6 +6,7 @@
 package com.judgment.controller;
 
 import com.judgment.service.ForumThreadService;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,7 +37,24 @@ public class ForumController {
     private static final String GUILD = "GUILD";
 
     @GetMapping("")
-    public String getForumPage(Model model) {
+    public String getForumPage(HttpServletRequest request, Model model) {
+
+        if (request.getSession().getAttribute("logoutSuccessful") != null) {
+            model.addAttribute("logoutSuccessful", "true");
+            request.getSession().removeAttribute("logoutSuccessful");
+        }
+
+        if (request.getSession().getAttribute("loginError") != null) {
+            if (request.getSession().getAttribute("loginError").equals("This account's email has not been verified.")) {
+                model.addAttribute("loginError", "This account's email has not been verified.");
+            }
+
+            if (request.getSession().getAttribute("loginError").equals("Invalid username or password.")) {
+                model.addAttribute("loginError", "Invalid username or password.");
+            }
+
+            request.getSession().removeAttribute("loginError");
+        }
 
         model.addAttribute(CONTENT, CONTENT_FORUM);
 
